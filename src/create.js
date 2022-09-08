@@ -3,6 +3,7 @@ import { useHistory } from "react-router-dom";
 
 
 
+
 const Create = () => {
 
     const [title, setTitle] = useState('');
@@ -25,6 +26,7 @@ const Create = () => {
         console.log('New Blog Added');
         SetIsPending(false)
         history.push('/');
+     
     })
     }
 
