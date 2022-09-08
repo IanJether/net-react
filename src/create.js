@@ -17,7 +17,7 @@ const Create = () => {
 
      SetIsPending(true);
 
-    fetch('jether-blogs.firebaseapp.com',{
+    fetch('http://localhost:8000/blogs',{
         method: 'POST',
         headers: {"Content-type": "application/json"},
         body: JSON.stringify(blog)

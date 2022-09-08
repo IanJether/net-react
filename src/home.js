@@ -5,7 +5,7 @@ import React from 'react';
 
 const Home = () => {
 
-  const { Data: blogs, isPending , error } = useFetch('jether-blogs.firebaseapp.com');
+  const { Data: blogs, isPending , error } = useFetch('http://localhost:8000/blogs');
 
     return ( 
         <div className="Home">
