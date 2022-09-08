@@ -1,24 +1,41 @@
-import logo from './logo.svg';
-import './App.css';
+
+import React from 'react';
+import Navbar from './navbar';
+import Home from './home';
+import { BrowserRouter as Router, Route, Switch } from 'react-router-dom';
+import Create from './create';
+import BlockDetails from './BlogDetails';
+import NotFound from './NotFound';
+
+
 
 function App() {
+  // const title = 'Welcome to Jether Blog';
+  // const like = 50;
+  // const link = "http://www.google.com";
+
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <Router>
+      <div className="App">
+        <Navbar></Navbar>
+          <div className="content">
+            <Switch>
+              <Route exact path="/">
+                  <Home/>
+              </Route>
+              <Route path="/Create">
+                  <Create/>
+              </Route>
+              <Route path="/blogs/:id">
+                  <BlockDetails/>
+              </Route>
+              <Route path="*">
+                <NotFound />
+              </Route>
+            </Switch>
+          </div>
+      </div>
+    </Router>
   );
 }
 
